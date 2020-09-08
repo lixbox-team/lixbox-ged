@@ -1,0 +1,163 @@
+import com.bmuschko.gradle.docker.tasks.container.*
+import com.bmuschko.gradle.docker.tasks.image.*
+plugins {
+    id 'com.bmuschko.docker-remote-api' version '6.1.3'
+    id 'io.quarkus' version "${quarkus_gradle_plugins}"
+}
+project(":lixbox-ged-core"){
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        //project
+        compile project(":lixbox-ged-api")
+        
+        //Lixbox 
+        compile(group: 'fr.lixbox.lixbox-io', name: 'lixbox-json', version: version_lixbox_io)
+        compile(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-client', version: version_lixbox_service)
+        compile(group: 'fr.lixbox.lixbox-orm', name: 'lixbox-redis', version: version_lixbox_orm)
+        compile(group: 'fr.lixbox.lixbox-param', name: 'lixbox-param-client', version: version_lixbox_param)
+        
+        //quarkus
+        compile group: 'io.quarkus', name: 'quarkus-resteasy', version:quarkusVersion
+        compile group: 'io.quarkus', name: 'quarkus-resteasy-jackson', version:quarkusVersion
+        compile group: 'io.quarkus', name: 'quarkus-rest-client', version:quarkusVersion
+        compile group: 'io.quarkus', name: 'quarkus-smallrye-openapi', version:quarkusVersion
+        compile group: 'io.quarkus', name: 'quarkus-logging-gelf', version:quarkusVersion
+        compile group: 'io.quarkus', name: 'quarkus-smallrye-opentracing', version: quarkusVersion
+        
+        //Jakarta ee spec + impl
+        compile group: 'jakarta.ejb', name: 'jakarta.ejb-api', version: '3.2.6'
+        compile group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '2.2.3' 
+
+        
+        //divers
+        compile group: 'sesin.poseidon', name: 'jvulcain', version: '11.0.00.005'
+        compile group: 'redis.clients', name: 'jedis', version: '3.2.0'
+        compile group: 'org.hibernate.validator', name: 'hibernate-validator', version: version_hibernate_validator
+        
+        //TEST
+        testCompile group:'io.quarkus', name: 'quarkus-junit5', version: quarkusVersion
+        testCompile group:'io.rest-assured', name: 'rest-assured', version: '3.3.0'
+        testCompile group: 'io.quarkus', name: 'quarkus-rest-client', version: quarkusVersion
+    }
+    
+    jar{
+       duplicatesStrategy = DuplicatesStrategy.INCLUDE
+       from('dist') {
+          include '**/*.*'
+            into 'META-INF/resources'
+       }
+   
+
+       manifest {
+            attributes(
+                "Implementation-Title": project.name, 
+                "Implementation-Version": archiveVersion, 
+                "Implementation-Timestamp": new Date()
+            )
+        }
+    }
+    
+    eclipse{
+        project{
+            natures 'org.jboss.tools.ws.jaxrs.nature'
+        }
+        wtp{
+            facet {
+                facet name: 'jst.cdi', version: '2.0'
+                facet name: "jst.jaxrs", version: "2.1"
+            }   
+        }
+    }
+    
+    sonarqube {
+        properties {
+           property "sonar.projectKey", "${config.desc_project.artefact.group}.${rootProject.name}:${project.name}"
+           property "sonar.projectName", "${project.name}"
+           property "sonar.sources","src/main"
+           property "sonar.tests","src/test, src/integTest"
+        }
+    }
+
+    test {
+      useJUnitPlatform()      
+      environment "REGISTRY_REDIS_URI", "tcp://main.host:6380"
+      environment "PARAM_REDIS_URI", "tcp://main.host:6380"
+    }
+
+    
+    //creation de l'image docker
+    task pullOpenjdk11Image(type: DockerPullImage, description: "Pull openjdk11 image"){
+       image='openjdk:11'
+    }    
+    task syncDependencies(type: Sync) {
+        dependsOn quarkusBuild
+        from "build/${project.name}-${project.version}-runner.jar"
+        into 'build/docker'
+    }
+    tasks.create('createDockerfile', Dockerfile) {
+        dependsOn pullOpenjdk11Image,syncDependencies
+        from('openjdk:11')
+        copyFile("${project.name}-${project.version}-runner.jar", "/app/${project.name}-${project.version}-runner.jar")
+        environmentVariable("JAVA_OPTS",'${JAVA_OPTS:--Xms=256M}')
+        runCommand("useradd lixbox --create-home --shell /bin/bash")
+        runCommand("chown -R lixbox /app")
+        user("lixbox")
+        entryPoint('java')
+        workingDir('/app')
+        defaultCommand('-jar', "${project.name}-${project.version}-runner.jar")
+        exposePort(18100)
+    }
+    task buildProjectImages(type: DockerBuildImage, group: "docker", description: "build project images") {
+        dependsOn createDockerfile
+        images.add("${config.desc_project.artefact.dockerImageKey}/${project.name}:$project.version")
+        images.add("${config.desc_project.artefact.dockerImageKey}/${project.name}:latest")
+    }
+    task pushProjectImages(type: DockerPushImage, group: "docker", description: "push project images") {
+       registryCredentials {
+            username = project.hasProperty("dockerhub_username")?project.getProperty("dockerhub_username"):''
+            password = project.hasProperty("dockerhub_password")?project.getProperty("dockerhub_password"):''
+        }
+        images.add("${config.desc_project.artefact.dockerImageKey}/${project.name}:$project.version")
+        images.add("${config.desc_project.artefact.dockerImageKey}/${project.name}:latest")
+    }
+    pushProjectImages.dependsOn buildProjectImages
+    buildAndPushDockerImages.dependsOn pushProjectImages
+
+
+    //initialisation du conteneur REDIS pour les tests
+    task pullRedisImage(type: DockerPullImage, description: "Pull redis image"){
+       image='redis:latest'
+    }
+    task removeRedisContainer(type: DockerRemoveContainer, description: "Remove redis container"){
+        targetContainerId 'param_serv_redis_test'
+        onError { exception ->
+            if (!(exception.message.contains('No such container')||exception.message.contains('is already in progress')))
+                throw exception
+        }
+    }
+    task createRedisContainer(type: DockerCreateContainer, description: "Create a redis container for test") {
+        targetImageId 'redis:latest'
+        containerName = 'param_serv_redis_test'
+        hostConfig.autoRemove = true
+        hostConfig.portBindings = ['6381:6379']
+    }
+    task startRedisContainer(type: DockerStartContainer, group: "docker", description: "start redis container") {
+        targetContainerId "param_serv_redis_test"
+    }   
+    task stopRedisContainer(type: DockerStopContainer, group: "docker", description: "stop redis container") {
+        targetContainerId "param_serv_redis_test"        
+        onError { exception ->
+            if (!exception.message.contains('No such container'))
+                throw exception
+        }
+    }
+//    tasks.clean.dependsOn(tasks.pullRedisImage);
+//    tasks.createRedisContainer.dependsOn(tasks.removeRedisContainer);
+//    tasks.removeRedisContainer.dependsOn(tasks.stopRedisContainer);
+//    tasks.startRedisContainer.dependsOn(tasks.createRedisContainer);
+//    tasks.test.dependsOn(tasks.startRedisContainer);
+//    tasks.quarkusDev.dependsOn(tasks.startRedisContainer);
+//    tasks.removeTestContainers.dependsOn(tasks.removeRedisContainer);
+}

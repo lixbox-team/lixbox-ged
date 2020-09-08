@@ -1,0 +1,56 @@
+project(":lixbox-ged-client"){
+    dependencies {
+        //Projects
+        compile project(":lixbox-ged-api")
+        
+       
+        //lixbox
+        compile(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-client', version: version_lixbox_service){ 
+            exclude(group:'fr.lixbox')
+        }
+         
+        //jarkarta
+        compileOnly (group: 'jakarta.platform', name: 'jakarta.jakartaee-api', version: '8.0.0')
+  
+        //divers
+        compileOnly group: 'jakarta.ws.rs', name: 'jakarta.ws.rs-api', version: '2.1.5'
+	}
+    
+    jar{
+       duplicatesStrategy = DuplicatesStrategy.INCLUDE
+       from('dist') {
+          include '**/*.*'
+            into 'META-INF/resources'
+       }
+   
+
+       manifest {
+            attributes(
+                "Implementation-Title": project.name, 
+                "Implementation-Version": archiveVersion, 
+                "Implementation-Timestamp": new Date()
+            )
+        }
+    }
+    
+    eclipse{
+        project{
+            natures 'org.jboss.tools.ws.jaxrs.nature'
+        }
+        wtp{
+            facet {
+                facet name: 'jst.cdi', version: '2.0'
+                facet name: "jst.jaxrs", version: "2.1"
+            }   
+        }
+    }
+    
+    sonarqube {
+        properties {
+           property "sonar.projectKey", "${config.desc_project.artefact.group}.${rootProject.name}:${project.name}"
+           property "sonar.projectName", "${project.name}"
+           property "sonar.sources","src/main"
+           property "sonar.tests","src/test"
+        }
+    }
+}

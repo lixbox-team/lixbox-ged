@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     
+                            Application SIMAX
+                           ==============
+       
+    Copyrigth 2003..2014 - GPMM_DAF_DSI_AD - Tous droits reserves.
+    
+    Le contenu de ce fichier est la propriete du Grand Port Maritime de Marseille Fos et 
+    particulierement de ces auteurs appartenant a la structure AD
+    
+    Toute utilisation de ce fichier et des informations, sous n'importe quelle
+    forme necessite un accord ecrit explicite des auteurs
+    
+    @AUTHOR Christophe BASSO
+    @AUTHOR Ronan BLETIO
+    @AUTHOR Virgile DE LACERDA
+    @AUTHOR Didier GISSINGER
+    @AUTHOR Michel SORRENTINI
+    @AUTHOR Ludovic TERRAL
+    @AUTHOR Didier VALADON
+-->
+<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
+       version="1.1" bean-discovery-mode="all">
+</beans>

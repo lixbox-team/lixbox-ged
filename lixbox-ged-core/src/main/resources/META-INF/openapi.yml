@@ -1,0 +1,52 @@
+---
+openapi: 3.0.1
+info:
+  title: Lixbox-ged
+  version: "8.1.0"
+  x-logo:
+    url: 'https://redocly.github.io/redoc/petstore-logo.png'
+    altText: Lixbox ged logo
+  description: |
+    Il s'agit d'un micro-service de ged qui repose sur des providers:
+    - REDIS
+    - SESIN
+
+    ## Dépendances
+    ### API
+    * Nécessite un service Redis.
+    * Peut s'enregistrer dans un annuaire de service lixbox-registry.
+
+    ### UI
+    * Sans objet
+
+    ## Configuration
+    ### API
+    Les variables d'environnement suivantes servent à configurer le service:
+    * **REGISTRY_URI**: URI du service d'annauire initialisée avec **http://main.host:18100/registry/api/1.0**
+    * **REDIS_URI**: URI du service Redis initialisée avec **tcp://localhost:6380**
+    * **QUARKUS_HTTP_PORT**: Port exposée par le service initialisé avec **18100**
+    * **storage.path**: Définitition du chemin de stockage des fichiers: par défaut dans l'user_home
+
+    ### UI
+    Les variables d'environnement suivantes servent à configurer le service:
+    * **PARAMETRE_API_URL**: URI du service Redis initialisée avec **http://localhost:18101/cache/api/1.0**
+servers:
+  - url: http://localhost:18102/openapi
+    description: local
+paths:
+  /cache/api/1.0/health:
+    get:
+      responses:
+        "200":
+          description: OK
+  /parametre/api/1.0/health/live:
+    get:
+      responses:
+        "200":
+          description: OK
+  /parametre/api/1.0/health/ready:
+    get:
+      responses:
+        "200":
+          description: OK
+...

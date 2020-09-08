@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<FindBugsFilter>	
+    <Match>
+        <Bug code="REC" />
+    </Match>
+    <Match>
+        <Bug code="OBL" />
+    </Match>
+    <Match>
+        <Field name="wireMockRule" />
+        <Bug code="UrF" />
+    </Match>
+    <Match>
+        <class name="fr.lixbox.service.registry.redis.RedisRegistryServiceBean"/>
+    </Match>
+</FindBugsFilter>
+

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+<!-- java -->
+<suppress>
+   <notes><![CDATA[
+   file name: dom4j-2.1.1.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.dom4j/dom4j@.*$</packageUrl>
+   <cve>CVE-2020-10683</cve>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: mutiny-0.5.0.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.smallrye\.reactive/mutiny@.*$</packageUrl>
+   <cve>CVE-2013-0136</cve>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: mutiny-0.5.0.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.smallrye\.reactive/mutiny@.*$</packageUrl>
+   <cve>CVE-2018-15529</cve>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-1.3.1.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress>  
+<suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-common-1.3.1.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-common@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-jackson-1.3.1.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-jackson@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-server-common-1.3.1.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-server\-common@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: quarkus-http-core-3.0.4.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus\.http/quarkus\-http\-core@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:undertow</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: quarkus-http-http-core-3.0.4.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus\.http/quarkus\-http\-http\-core@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:undertow</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: quarkus-http-servlet-3.0.4.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus\.http/quarkus\-http\-servlet@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:undertow</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: quarkus-http-vertx-backend-3.0.4.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus\.http/quarkus\-http\-vertx\-backend@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:undertow</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: quarkus-undertow-1.3.1.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-undertow@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:undertow</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: netty-buffer-4.1.45.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.netty/netty\-buffer@.*$</packageUrl>
+   <cpe>cpe:/a:netty:netty</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: netty-codec-4.1.45.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.netty/netty\-codec@.*$</packageUrl>
+   <cpe>cpe:/a:netty:netty</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: netty-codec-dns-4.1.45.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.netty/netty\-codec\-dns@.*$</packageUrl>
+   <cpe>cpe:/a:netty:netty</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: netty-codec-http-4.1.45.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.netty/netty\-codec\-http@.*$</packageUrl>
+   <cpe>cpe:/a:netty:netty</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: netty-codec-http2-4.1.45.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.netty/netty\-codec\-http2@.*$</packageUrl>
+   <cpe>cpe:/a:netty:netty</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: netty-codec-socks-4.1.45.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.netty/netty\-codec\-socks@.*$</packageUrl>
+   <cpe>cpe:/a:netty:netty</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: netty-common-4.1.45.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.netty/netty\-common@.*$</packageUrl>
+   <cpe>cpe:/a:netty:netty</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: netty-handler-4.1.45.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.netty/netty\-handler@.*$</packageUrl>
+   <cpe>cpe:/a:netty:netty</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: netty-handler-proxy-4.1.45.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.netty/netty\-handler\-proxy@.*$</packageUrl>
+   <cpe>cpe:/a:netty:netty</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: netty-resolver-4.1.45.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.netty/netty\-resolver@.*$</packageUrl>
+   <cpe>cpe:/a:netty:netty</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: netty-resolver-dns-4.1.45.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.netty/netty\-resolver\-dns@.*$</packageUrl>
+   <cpe>cpe:/a:netty:netty</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: netty-transport-4.1.45.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.netty/netty\-transport@.*$</packageUrl>
+   <cpe>cpe:/a:netty:netty</cpe>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: quarkus-swagger-ui-1.3.1.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-swagger\-ui@.*$</packageUrl>
+   <cpe>cpe:/a:swagger_project:swagger-ui</cpe>
+</suppress>
+
+
+<!-- nodejs -->
+<suppress>
+   <notes><![CDATA[
+   file name: @hapi/hoek:8.5.0
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/%40hapi%2Fhoek@.*$</packageUrl>
+   <vulnerabilityName>1468</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: acorn:6.4.1
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/acorn@.*$</packageUrl>
+   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: minimist:0.0.8
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/minimist@.*$</packageUrl>
+   <vulnerabilityName>1179</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: yargs-parser:11.1.1
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/yargs\-parser@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-7608</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: yargs-parser:13.1.1
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/yargs\-parser@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-7608</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: yargs-parser:16.1.0
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/yargs\-parser@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-7608</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: yargs:12.0.5
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/yargs@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-7608</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: braces:"3.0.2"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/braces@.*$</packageUrl>
+   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: debug:"2.6.9"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/debug@.*$</packageUrl>
+   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: kind-of:"5.1.0"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/kind\-of@.*$</packageUrl>
+   <vulnerabilityName>CWE-74: Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: kind-of:3.2.2
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/kind\-of@.*$</packageUrl>
+   <vulnerabilityName>CWE-74: Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: kind-of:4.0.0
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/kind\-of@.*$</packageUrl>
+   <vulnerabilityName>CWE-74: Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: ms:"2.0.0"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/ms@.*$</packageUrl>
+   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: qs:"6.7.0"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/qs@.*$</packageUrl>
+   <vulnerabilityName>CVE-2014-7191</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: qs:"6.7.0"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/qs@.*$</packageUrl>
+   <vulnerabilityName>CWE-20: Improper Input Validation</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: qs:"6.7.0"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/qs@.*$</packageUrl>
+   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: qs:"6.7.0"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/qs@.*$</packageUrl>
+   <vulnerabilityName>Prototype override protection bypass</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: ssri:"7.1.0"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/ssri@.*$</packageUrl>
+   <vulnerabilityName>CVE-2018-7651</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: ssri:"7.1.0"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/ssri@.*$</packageUrl>
+   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: tough-cookie:"2.5.0"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/tough\-cookie@.*$</packageUrl>
+   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: ms:"2.0.0"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/ms@.*$</packageUrl>
+   <vulnerabilityName>CVE-2015-8315</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: http-proxy:1.18.0
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/http\-proxy@.*$</packageUrl>
+   <vulnerabilityName>1486</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: lodash:4.17.15
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/lodash@.*$</packageUrl>
+   <vulnerabilityName>1523</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: yargs-parser:16.1.0
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/yargs\-parser@.*$</packageUrl>
+   <vulnerabilityName>1500</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: yargs-parser:11.1.1
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/yargs\-parser@.*$</packageUrl>
+   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: dot-prop:4.2.0
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/dot\-prop@.*$</packageUrl>
+   <vulnerabilityName>1213</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: lodash:4.17.15
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/lodash@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-8203</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: serialize-javascript:3.1.0
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/serialize\-javascript@.*$</packageUrl>
+   <vulnerabilityName>1548</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: semver:"7.3.2"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/semver@.*$</packageUrl>
+   <vulnerabilityName>CVE-2015-8855</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: serialize-javascript:"2.1.2"
+   ]]></notes>
+   <packageUrl regex="true">^pkg:npm/serialize\-javascript@.*$</packageUrl>
+   <vulnerabilityName>CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</vulnerabilityName>
+</suppress>
+</suppressions>

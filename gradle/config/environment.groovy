@@ -1,0 +1,60 @@
+desc_project{
+    type="app-docker"
+    projectSite=false
+    withDocker=true
+    withRegistry=false
+    withQuarkus=false
+    version{
+        majorVersion=8
+        mediumVersion=1
+        minorVersion=0
+    }
+    artefact{
+        group="fr.lixbox.lixbox-ged"
+        project="lixbox-ged"
+        projectKey="${group}:${project}"
+        dockerImageKey="lixboxteam"
+    }
+	uri{
+	   api_context="/ged/api"
+	   api="/ged/api/1.0"
+	   ui_context="/ged/ui"
+	   ui="/ged/ui" 
+	}
+
+	pic{
+	    channel="lixbox"
+		git{
+    	    uri="https://scm.service.dev.lan/${channel}/${desc_project.artefact.project}.git"
+    	}    	
+        jenkins{
+            uri="https://ci.service.dev.lan/view/${channel}/job/${desc_project.artefact.project}-pipeline"
+        }   
+        sonar{
+            uri="https://quality.service.dev.lan/dashboard?id=${desc_project.artefact.group}%3A${desc_project.artefact.project}"
+        }
+    }
+}
+
+artifactoryRepository{
+	contextUrl="https://repos.service.dev.lan/artifactory"
+    username="lixbox.jenkins.bot"
+    password=".TL1b0sc!"
+	lixboxRelease	{	
+		name="lixbox-release"
+	}
+    lixboxSnapshot {
+        name="lixbox-snapshot"
+    }
+    libsRelease{
+		name="libs-release"
+	}
+}
+
+sonarRepository{
+	host{
+		url="https://quality.service.dev.lan"
+        username="lixbox.sonar.bot"
+        password="@L1xb0x!"
+	}
+}

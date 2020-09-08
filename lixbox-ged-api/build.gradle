@@ -1,0 +1,62 @@
+project(":lixbox-ged-api"){
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        //project
+//        sans objet
+        
+        //lixbox
+        compile(group: 'fr.lixbox.lixbox-common', name: 'lixbox-stream', version: version_lixbox_common)
+        compile(group: 'fr.lixbox.lixbox-orm', name: 'lixbox-entity', version: version_lixbox_orm)
+        compile(group: 'fr.lixbox.lixbox-orm', name: 'lixbox-redis', version: version_lixbox_orm)
+        compile(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-common', version: version_lixbox_service) 
+        
+        //quarkus
+        compile group: 'io.quarkus', name: 'quarkus-resteasy', version:quarkusVersion
+
+        //divers
+        compileOnly group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '2.2.3'
+        
+        //TEST
+//        sans objet
+    }
+    
+    jar{
+       duplicatesStrategy = DuplicatesStrategy.INCLUDE
+       from('dist') {
+          include '**/*.*'
+            into 'META-INF/resources'
+       }
+   
+
+       manifest {
+            attributes(
+                "Implementation-Title": project.name, 
+                "Implementation-Version": archiveVersion, 
+                "Implementation-Timestamp": new Date()
+            )
+        }
+    }
+    
+    eclipse{
+        project{
+            natures 'org.jboss.tools.ws.jaxrs.nature'
+        }
+        wtp{
+            facet {
+                facet name: 'jst.cdi', version: '2.0'
+                facet name: "jst.jaxrs", version: "2.1"
+            }   
+        }
+    }
+    
+    sonarqube {
+        properties {
+           property "sonar.projectKey", "${config.desc_project.artefact.group}.${rootProject.name}:${project.name}"
+           property "sonar.projectName", "${project.name}"
+           property "sonar.sources","src/main"
+           property "sonar.tests","src/test"
+        }
+    }
+}
