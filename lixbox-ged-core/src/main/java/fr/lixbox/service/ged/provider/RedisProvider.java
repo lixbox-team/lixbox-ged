@@ -88,7 +88,7 @@ public class RedisProvider implements Serializable, GedProvider
             result = redisClient.findById(GedEntry.class, oid);
             if (loadContent)
             {
-                result = chargerDependancesGedFileEntries(result);
+                chargerDependancesGedFileEntries(result);
             }
         }
         catch (Exception e)
@@ -181,7 +181,7 @@ public class RedisProvider implements Serializable, GedProvider
                File file = Paths.get(fileEntry.getStoragePath()+"/"+fileEntry.getFileName()).toFile();
                if (file.exists())
                {
-                   FileUtil.deleteDirectory(file);
+                   FileUtil.forceDelete(file);
                }
             }            
             redisClient.remove(GedEntry.class,oid);

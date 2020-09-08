@@ -51,7 +51,6 @@ import fr.lixbox.service.ged.Constant;
 import fr.lixbox.service.ged.model.FileExtension;
 import fr.lixbox.service.ged.model.GedEntry;
 import fr.lixbox.service.ged.model.GedFileEntry;
-import fr.lixbox.service.ged.provider.GedProvider;
 import fr.lixbox.service.registry.cdi.LocalRegistryConfig;
 import fr.lixbox.service.registry.client.RegistryServiceClient;
 import jvulcain.JV_ConsultReponse;
@@ -134,7 +133,7 @@ public class SesinProvider implements Serializable, GedProvider
             sesinClient.PosGetAllIndexDoc(iNumDocPos, vecStruLISTERUB);    
             for (JV_StruLISTERUB rub : vecStruLISTERUB)
             {
-                result.getIndex().put(rub.getCodeRub(),rub.szValeurRub);
+                result.getMetadatas().put(rub.getCodeRub(),rub.szValeurRub);
             }
             
             //chargement des contenus.
@@ -203,7 +202,7 @@ public class SesinProvider implements Serializable, GedProvider
             JV_Int iNbReponses = new JV_Int();
             JV_Int iAdrPremiereReponse = new JV_Int();
             Vector<JV_StruLOCUTION> criterions = new Vector<>();
-            for (Entry<String, String> crit : criteria.getIndex().entrySet())
+            for (Entry<String, String> crit : criteria.getMetadatas().entrySet())
             {
                 JV_StruLOCUTION criterion = new JV_StruLOCUTION(criterions.isEmpty()?JV_StruLOCUTION.RECH_MC_LIEN_OU:JV_StruLOCUTION.RECH_MC_LIEN_ET, criteria.getEntite(), crit.getKey(), '=', crit.getValue(), "", (short) 0, (short) 0);
                 criterions.add(criterion);
@@ -261,7 +260,7 @@ public class SesinProvider implements Serializable, GedProvider
         
         //convertion des rubriques au format sesin
         Vector<JV_StruLISTERUB> sesinRubs = new Vector<>();
-        for (Entry<String, String> index : document.getIndex().entrySet())
+        for (Entry<String, String> index : document.getMetadatas().entrySet())
         {
             sesinRubs.add(new JV_StruLISTERUB(index.getKey(), index.getValue()));
         }

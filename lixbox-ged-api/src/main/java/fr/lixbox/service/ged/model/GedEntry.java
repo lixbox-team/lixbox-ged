@@ -66,7 +66,7 @@ public class GedEntry extends AbstractValidatedEntity implements Dao, RedisSearc
     private String oid;
     private String serviceId;
     private String entite;
-    private Map<String, String> index;
+    private Map<String, String> metadatas;
     private List<GedFileEntry> entries;    
     private int occurences;
     private String highlight;
@@ -110,23 +110,23 @@ public class GedEntry extends AbstractValidatedEntity implements Dao, RedisSearc
     {
         this.entite = entite;
     }
+
+
     
-        
-    
-    public Map<String, String> getIndex()
+    public Map<String, String> getMetadatas()
     {
-        if (index == null)
+        if (metadatas == null)
         {
-            index = new HashMap<>();
+            metadatas = new HashMap<>();
         }
-        return index;
+        return metadatas;
     }
-    public void setIndex(Map<String, String> index)
+    public void setMetadatas(Map<String, String> metadatas)
     {
-        this.index = index;
+        this.metadatas = metadatas;
     }
-
-
+    
+    
     
     public List<GedFileEntry> getEntries()
     {
@@ -224,7 +224,7 @@ public class GedEntry extends AbstractValidatedEntity implements Dao, RedisSearc
         Schema schema = new Schema()
                 .addSortableTextField("synthese", 1)
                 .addSortableTextField("serviceId",1);
-        for (String index : getIndex().keySet())
+        for (String index : getMetadatas().keySet())
         {
             schema.addSortableTextField(index, 1);
         }
@@ -242,7 +242,7 @@ public class GedEntry extends AbstractValidatedEntity implements Dao, RedisSearc
         Map<String, Object> indexFields = new HashMap<>();
         indexFields.put("synthese", RedisSearchValueSanitizer.sanitizeValue(synthese));
         indexFields.put("serviceId", RedisSearchValueSanitizer.sanitizeValue(serviceId));
-        for (Entry<String, String> index : getIndex().entrySet())
+        for (Entry<String, String> index : getMetadatas().entrySet())
         {
             indexFields.put(index.getKey(), index.getValue());
         }

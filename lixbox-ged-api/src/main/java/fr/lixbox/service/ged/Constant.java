@@ -42,7 +42,7 @@ public class Constant
     public static final String PROVIDER_KEY = "GED_PROVIDER";
     
     
-    public Constant()
+    private Constant()
     {
         //pas de constructeur
     }

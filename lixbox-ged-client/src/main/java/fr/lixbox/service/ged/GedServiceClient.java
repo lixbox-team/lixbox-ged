@@ -82,17 +82,17 @@ public class GedServiceClient extends MicroServiceClient implements GedService
         if (appOid == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, "appOid" }));
+                    new String[] { GedService.SERVICE_CODE, "appOid" }));
         }
         if (gedOid == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, "gedOid" }));
+                    new String[] { GedService.SERVICE_CODE, "gedOid" }));
         }
         if (fileEntryOid == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, "fileEntryOid" }));
+                    new String[] { GedService.SERVICE_CODE, "fileEntryOid" }));
         }
         
         Response result;
@@ -119,12 +119,12 @@ public class GedServiceClient extends MicroServiceClient implements GedService
         if (oid == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, "oid" }));
+                    new String[] { GedService.SERVICE_CODE, "oid" }));
         }
         if (appId == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, APP_ID }));
+                    new String[] { GedService.SERVICE_CODE, APP_ID }));
         }
         
         GedEntry result;
@@ -134,7 +134,7 @@ public class GedServiceClient extends MicroServiceClient implements GedService
             Response response = service
                     .path(appId).path(oid)
                     .request().get();
-            result = (GedEntry) parseResponse(response, new GenericType<GedEntry>(){});
+            result = parseResponse(response, new GenericType<GedEntry>(){});
         }
         else
         {
@@ -153,12 +153,12 @@ public class GedServiceClient extends MicroServiceClient implements GedService
         if (appId == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, APP_ID }));
+                    new String[] { GedService.SERVICE_CODE, APP_ID }));
         }
         if (criteria == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, "criteria" }));
+                    new String[] { GedService.SERVICE_CODE, "criteria" }));
         }
         
         
@@ -169,7 +169,7 @@ public class GedServiceClient extends MicroServiceClient implements GedService
             Response response = service
                     .path(appId).path("criterias")
                     .request().post(Entity.json(criteria.toString()));
-            result = (List<GedEntry>) parseResponse(response, new GenericType<List<GedEntry>>(){});
+            result = parseResponse(response, new GenericType<List<GedEntry>>(){});
         }
         else
         {
@@ -187,12 +187,12 @@ public class GedServiceClient extends MicroServiceClient implements GedService
         if (appId == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, APP_ID }));
+                    new String[] { GedService.SERVICE_CODE, APP_ID }));
         }
         if (document == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, "document" }));
+                    new String[] { GedService.SERVICE_CODE, "document" }));
         }
         
         GedEntry result;
@@ -202,7 +202,7 @@ public class GedServiceClient extends MicroServiceClient implements GedService
             Response response = service
                     .path(appId).path("sync").path(Boolean.toString(syncFileEntries))
                     .request().post(Entity.json(document.toString()));
-            result = (GedEntry) parseResponse(response, new GenericType<GedEntry>(){});
+            result = parseResponse(response, new GenericType<GedEntry>(){});
         }
         else
         {
@@ -220,12 +220,12 @@ public class GedServiceClient extends MicroServiceClient implements GedService
         if (appId == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, APP_ID }));
+                    new String[] { GedService.SERVICE_CODE, APP_ID }));
         }
         if (oid == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, "oid" }));
+                    new String[] { GedService.SERVICE_CODE, "oid" }));
         }
         
         Boolean result;
@@ -235,7 +235,7 @@ public class GedServiceClient extends MicroServiceClient implements GedService
             Response response = service
                     .path(appId).path(oid)
                     .request().delete();
-            result = (Boolean) parseResponse(response, new GenericType<Boolean>(){});
+            result = parseResponse(response, new GenericType<Boolean>(){});
         }
         else
         {
@@ -254,17 +254,17 @@ public class GedServiceClient extends MicroServiceClient implements GedService
         if (appId == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, APP_ID }));
+                    new String[] { GedService.SERVICE_CODE, APP_ID }));
         }
         if (oidDoc1 == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, "oidDoc1" }));
+                    new String[] { GedService.SERVICE_CODE, "oidDoc1" }));
         }
         if (oidDoc2 == null)
         {
             throw new BusinessException(LixboxResources.getString(MSG_ERROR_EXCEPUTI_02,
-                    new String[] { GedServiceClient.SERVICE_CODE, "oidDoc2" }));
+                    new String[] { GedService.SERVICE_CODE, "oidDoc2" }));
         }
         
         
