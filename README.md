@@ -15,9 +15,14 @@ Le site du service est [ici](https://project-site.service.dev.lan/lixbox-ged)
 ## Configuration 
 ### API
 Les variables d'environnement suivantes servent à configurer le service:
-* **REGISTRY_URI**: URI du service d'annauire initialisée avec **http://main.host:18100/registry/api/1.0**
-* **REDIS_URI**: URI du service Redis initialisée avec **tcp://localhost:6381**
-* **QUARKUS_HTTP_PORT**: Port exposée par le service initialisé avec **18104**
+* **registry.uri**: URI du service d'annauire -> **http://main.host:18100/registry/api/1.0**
+* **redis.uri**: URI du service Redis -> **tcp://localhost:6382**
+* **quarkus.http.port**: Port exposée par le service -> **18104**
+* **storage.path**: Définitition du chemin de stockage des fichiers -> **user_home**
+* **quarkus.log.handler.gelf.enabled**: Activation du logging GRAYLOG -> **false**
+* **quarkus.log.handler.gelf.host**: Serveur GRAYLOG -> **vsrvglog.pam.lan**
+* **quarkus.log.handler.gelf.port**: Port GRAYLOG -> **12201**
+* **quarkus.jaeger.endpoint**: URI Jaeger -> **http://jaeger.service.dev.lan:14268/api/traces**
 
 
 ## Utilisateur nécessaire

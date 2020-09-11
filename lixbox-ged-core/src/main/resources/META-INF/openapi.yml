@@ -3,9 +3,6 @@ openapi: 3.0.1
 info:
   title: Lixbox-ged
   version: "8.1.0"
-  x-logo:
-    url: 'https://redocly.github.io/redoc/petstore-logo.png'
-    altText: Lixbox ged logo
   description: |
     Il s'agit d'un micro-service de ged qui repose sur des providers:
     - REDIS
@@ -22,29 +19,32 @@ info:
     ## Configuration
     ### API
     Les variables d'environnement suivantes servent à configurer le service:
-    * **REGISTRY_URI**: URI du service d'annauire initialisée avec **http://main.host:18100/registry/api/1.0**
-    * **REDIS_URI**: URI du service Redis initialisée avec **tcp://localhost:6380**
-    * **QUARKUS_HTTP_PORT**: Port exposée par le service initialisé avec **18100**
-    * **storage.path**: Définitition du chemin de stockage des fichiers: par défaut dans l'user_home
+    * **registry.uri**: URI du service d'annauire -> **http://main.host:18100/registry/api/1.0**
+    * **redis.uri**: URI du service Redis -> **tcp://localhost:6382**
+    * **quarkus.http.port**: Port exposée par le service -> **18104**
+    * **storage.path**: Définitition du chemin de stockage des fichiers -> **user_home**
+    * **quarkus.log.handler.gelf.enabled**: Activation du logging GRAYLOG -> **false**
+    * **quarkus.log.handler.gelf.host**: Serveur GRAYLOG -> **vsrvglog.pam.lan**
+    * **quarkus.log.handler.gelf.port**: Port GRAYLOG -> **12201**
+    * **quarkus.jaeger.endpoint**: URI Jaeger -> **http://jaeger.service.dev.lan:14268/api/traces**
 
     ### UI
-    Les variables d'environnement suivantes servent à configurer le service:
-    * **PARAMETRE_API_URL**: URI du service Redis initialisée avec **http://localhost:18101/cache/api/1.0**
+    sans objet 
 servers:
-  - url: http://localhost:18102/openapi
+  - url: http://localhost:18104/openapi
     description: local
 paths:
-  /cache/api/1.0/health:
+  /ged/api/1.0/health:
     get:
       responses:
         "200":
           description: OK
-  /parametre/api/1.0/health/live:
+  /ged/api/1.0/health/live:
     get:
       responses:
         "200":
           description: OK
-  /parametre/api/1.0/health/ready:
+  /ged/api/1.0/health/ready:
     get:
       responses:
         "200":
