@@ -87,6 +87,28 @@ project(":lixbox-ged-core"){
     }
 
     
+    //export quarkus project runner to maven
+    def quarkusRunner = file("$buildDir/libs/${project.name}-${version}.rjar")
+    def quarkusRunnerArtifact = artifacts.add('archives', quarkusRunner) {
+        type 'rjar'
+        builtBy 'quarkusBuild'
+    }    
+    task copyArtefact(type: Copy) {
+        from "$buildDir/${project.name}-${version}-runner.jar"
+        into "$buildDir/libs"
+        rename { String fileName -> "${project.name}-${version}.rjar"}
+    }
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                artifact quarkusRunnerArtifact
+            }
+        }
+    }
+    tasks.quarkusBuild.finalizedBy(copyArtefact);
+    tasks.jar.finalizedBy(quarkusBuild);
+    
+    
     //creation de l'image docker
     task pullOpenjdk11Image(type: DockerPullImage, description: "Pull openjdk11 image"){
        image='openjdk:11'

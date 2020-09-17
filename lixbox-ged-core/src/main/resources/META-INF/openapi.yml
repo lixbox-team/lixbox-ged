@@ -19,7 +19,7 @@ info:
     ## Configuration
     ### API
     Les variables d'environnement suivantes servent à configurer le service:
-    * **registry.uri**: URI du service d'annauire -> **http://main.host:18100/registry/api/1.0**
+    * **registry.uri**: URI du service d'annuaire -> **http://main.host:18100/registry/api/1.0**
     * **redis.uri**: URI du service Redis -> **tcp://localhost:6382**
     * **quarkus.http.port**: Port exposée par le service -> **18104**
     * **storage.path**: Définitition du chemin de stockage des fichiers -> **user_home**

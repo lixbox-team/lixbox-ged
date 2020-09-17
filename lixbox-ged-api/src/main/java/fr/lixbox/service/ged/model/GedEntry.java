@@ -248,4 +248,15 @@ public class GedEntry extends AbstractValidatedEntity implements Dao, RedisSearc
         }
         return indexFields;
     }
+
+    
+
+    @Transient
+    @JsonIgnore
+    @XmlTransient
+    @Override
+    public long getTTL()
+    {
+        return 0;
+    }
 }
