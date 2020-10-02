@@ -382,7 +382,7 @@ subprojects {
     }
 
     spotbugs {
-        toolVersion = '3.1.12'
+        toolVersion = '4.1.0'
         effort = 'max'
         excludeFilter file('../gradle/config/findbugsExcludeFilter.xml')
     }

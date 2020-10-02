@@ -46,8 +46,8 @@ import fr.lixbox.common.resource.LixboxResources;
 import fr.lixbox.common.stream.util.FileUtil;
 import fr.lixbox.common.util.ExceptionUtil;
 import fr.lixbox.common.util.StringUtil;
-import fr.lixbox.orm.redis.SearchQueryHelper;
 import fr.lixbox.orm.redis.client.ExtendRedisClient;
+import fr.lixbox.orm.redis.query.RedisSearchQueryHelper;
 import fr.lixbox.service.ged.GedService;
 import fr.lixbox.service.ged.model.GedEntry;
 import fr.lixbox.service.ged.model.GedFileEntry;
@@ -112,7 +112,7 @@ public class RedisProvider implements Serializable, GedProvider
         List<GedEntry> result = null;
         try
         {                     
-            result = redisClient.findByExpression(GedEntry.class, SearchQueryHelper.toQueryByCriteria(criteria));
+            result = redisClient.findByExpression(GedEntry.class, RedisSearchQueryHelper.toQueryByCriteria(criteria));
         }
         catch (Exception e)
         {

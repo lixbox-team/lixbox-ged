@@ -3,7 +3,7 @@ desc_project{
     projectSite=false
     withDocker=true
     withRegistry=false
-    withQuarkus=false
+    withQuarkus=true
     version{
         majorVersion=8
         mediumVersion=1
