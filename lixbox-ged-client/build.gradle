@@ -7,13 +7,10 @@ project(":lixbox-ged-client"){
         //lixbox
         compile(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-client', version: version_lixbox_service){ 
             exclude(group:'fr.lixbox')
-        }
-         
-        //jarkarta
-        compileOnly (group: 'jakarta.platform', name: 'jakarta.jakartaee-api', version: '8.0.0')
-  
+        }        
+        
         //divers
-        compileOnly group: 'jakarta.ws.rs', name: 'jakarta.ws.rs-api', version: '2.1.5'
+        compileOnly group: 'jakarta.ws.rs', name: 'jakarta.ws.rs-api', version: '2.1.6'
 	}
     
     jar{

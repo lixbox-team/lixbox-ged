@@ -25,15 +25,11 @@ project(":lixbox-ged-core"){
         compile group: 'io.quarkus', name: 'quarkus-smallrye-openapi', version:quarkusVersion
         compile group: 'io.quarkus', name: 'quarkus-logging-gelf', version:quarkusVersion
         compile group: 'io.quarkus', name: 'quarkus-smallrye-opentracing', version: quarkusVersion
-        
-        //Jakarta ee spec + impl
-        compile group: 'jakarta.ejb', name: 'jakarta.ejb-api', version: '3.2.6'
-        compile group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '2.2.3' 
 
         
         //divers
         compile group: 'sesin.poseidon', name: 'jvulcain', version: '11.0.00.005'
-        compile group: 'redis.clients', name: 'jedis', version: '3.2.0'
+        compile group: 'redis.clients', name: 'jedis', version: '3.3.0'
         compile group: 'org.hibernate.validator', name: 'hibernate-validator', version: version_hibernate_validator
         
         //TEST

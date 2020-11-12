@@ -13,11 +13,8 @@ project(":lixbox-ged-api"){
         compile(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-common', version: version_lixbox_service) 
         
         //quarkus
-        compile group: 'io.quarkus', name: 'quarkus-resteasy', version:quarkusVersion
+        compileOnly group: 'io.quarkus', name: 'quarkus-resteasy', version:quarkusVersion
 
-        //divers
-        compileOnly group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '2.2.3'
-        
         //TEST
 //        sans objet
     }
