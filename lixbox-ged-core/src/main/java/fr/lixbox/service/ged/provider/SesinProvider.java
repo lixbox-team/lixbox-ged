@@ -153,6 +153,7 @@ public class SesinProvider implements Serializable, GedProvider
                             byte[] datas = Files.readAllBytes(Paths.get(new File(tmpPath).toURI()));
                             fileEntry.setContent(datas);
                             fileEntry.setMimeType(FileUtil.getMIMEType(datas));
+                            fileEntry.setFileName(tabStInfoPage[j].getNomFichierOriginal());
                             result.getEntries().add(fileEntry);
                         }
                         FileUtil.forceDelete(new File(tmpPath));
@@ -300,10 +301,11 @@ public class SesinProvider implements Serializable, GedProvider
             }            
             if (!CollectionUtil.isEmpty(document.getEntries()) && syncFileEntry)
             {
-                document.getEntries().get(0).setOid("0");
-                Files.write(tmp.toPath(), document.getEntries().get(0).getContent());
+                GedFileEntry fileEntry = document.getEntries().get(0);
+                fileEntry.setOid("0");
+                Files.write(tmp.toPath(), fileEntry.getContent());
                 FileExtension nature = FileExtension.convertFromMimeType(FileUtil.getMIMEType(tmp));
-                JV_StruINFOMAJPAGE struINFOMAJPAGE = new JV_StruINFOMAJPAGE((short) 0, (short) 0, (short) 0, nature.name(), " ", tmp.getName());
+                JV_StruINFOMAJPAGE struINFOMAJPAGE = new JV_StruINFOMAJPAGE((short) 0, (short) 0, (short) 0, nature.name(), " ", fileEntry.getFileName());
                 sesinClient.PosAjoutePage(tmp.getAbsolutePath(), (short) 1, Integer.parseInt(document.getOid()), (short) 1, (short) 0, struINFOMAJPAGE);
             }            
             if (tmp.exists())

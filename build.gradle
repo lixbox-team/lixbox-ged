@@ -68,6 +68,7 @@ if (config.desc_project.withQuarkus)
 {
     apply from: 'gradle/with-quarkus.gradle'  
 }
+apply from: 'gradle/project-critical-update.gradle'
 
 import org.ajoberstar.grgit.Credentials
 import  org.ajoberstar.grgit.Person
