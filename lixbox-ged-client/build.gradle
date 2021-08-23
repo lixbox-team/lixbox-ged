@@ -1,16 +1,16 @@
 project(":lixbox-ged-client"){
     dependencies {
         //Projects
-        compile project(":lixbox-ged-api")
+        implementation project(":lixbox-ged-api")
         
        
         //lixbox
-        compile(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-client', version: version_lixbox_service){ 
+        implementation(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-client', version: version_lixbox_service){ 
             exclude(group:'fr.lixbox')
         }        
         
         //divers
-        compileOnly group: 'jakarta.ws.rs', name: 'jakarta.ws.rs-api', version: '2.1.6'
+        compileClasspath group: 'jakarta.ws.rs', name: 'jakarta.ws.rs-api', version: '2.1.6'
 	}
     
     jar{

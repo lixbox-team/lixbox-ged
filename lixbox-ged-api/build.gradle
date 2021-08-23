@@ -7,13 +7,13 @@ project(":lixbox-ged-api"){
 //        sans objet
         
         //lixbox
-        compile(group: 'fr.lixbox.lixbox-common', name: 'lixbox-stream', version: version_lixbox_common)
-        compile(group: 'fr.lixbox.lixbox-orm', name: 'lixbox-entity', version: version_lixbox_orm)
-        compile(group: 'fr.lixbox.lixbox-orm', name: 'lixbox-redis', version: version_lixbox_orm)
-        compile(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-common', version: version_lixbox_service) 
+        implementation(group: 'fr.lixbox.lixbox-common', name: 'lixbox-stream', version: version_lixbox_common)
+        implementation(group: 'fr.lixbox.lixbox-orm', name: 'lixbox-entity', version: version_lixbox_orm)
+        implementation(group: 'fr.lixbox.lixbox-orm', name: 'lixbox-redis', version: version_lixbox_orm)
+        implementation(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-common', version: version_lixbox_service) 
         
         //quarkus
-        compileOnly group: 'io.quarkus', name: 'quarkus-resteasy', version:quarkusVersion
+        compileClasspath group: 'io.quarkus', name: 'quarkus-resteasy', version:quarkusVersion
 
         //TEST
 //        sans objet

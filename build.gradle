@@ -103,7 +103,6 @@ allprojects {
     repositories{
         mavenLocal()
         mavenCentral()
-        jcenter()
         maven{
             url jarReposUrl
             credentials{
@@ -255,44 +254,44 @@ subprojects {
             }
         }
         wtp.component{
-              minusConfigurations << configurations.compileOnly
+              minusConfigurations << configurations.compileClasspath
         }
     }
 		
 	sourceSets {
 	  integrationTest {
 	    java{
-          compileClasspath = sourceSets.main.output + sourceSets.test.output + configurations.testRuntime
+          compileClasspath = sourceSets.main.output + sourceSets.test.output
           runtimeClasspath = output + compileClasspath
 	    }
 	  }  
 	  acceptanceTest {
         java{
-  		  compileClasspath = sourceSets.main.output + sourceSets.test.output + configurations.testRuntime
+  		  compileClasspath = sourceSets.main.output + sourceSets.test.output
 		  runtimeClasspath = output + compileClasspath
 		}
 	  }	  
 	  smokeTest {
         java{
-          compileClasspath = sourceSets.main.output + sourceSets.test.output + configurations.testRuntime
+          compileClasspath = sourceSets.main.output + sourceSets.test.output
           runtimeClasspath = output + compileClasspath
         }
 	  }  
 	  loadTest {
         java{
-          compileClasspath = sourceSets.main.output + sourceSets.test.output + configurations.testRuntime
+          compileClasspath = sourceSets.main.output + sourceSets.test.output
           runtimeClasspath = output + compileClasspath
         }
 	  }
       uiTest {
         java.srcDir file("src/uiTest/java")
         resources.srcDir file("src/uiTest/resources")
-        compileClasspath = sourceSets.main.output + configurations.testRuntime
+        compileClasspath = sourceSets.main.output
         runtimeClasspath = output + compileClasspath
       }
       wsTest {
         java{
-          compileClasspath = sourceSets.main.output + sourceSets.test.output + configurations.testRuntime
+          compileClasspath = sourceSets.main.output + sourceSets.test.output
           runtimeClasspath = output + compileClasspath
         }
       }

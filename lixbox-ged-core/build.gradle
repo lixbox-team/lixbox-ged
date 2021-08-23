@@ -10,32 +10,32 @@ project(":lixbox-ged-core"){
     }
     dependencies {
         //project
-        compile project(":lixbox-ged-api")
+        implementation project(":lixbox-ged-api")
         
         //Lixbox 
-        compile(group: 'fr.lixbox.lixbox-io', name: 'lixbox-json', version: version_lixbox_io)
-        compile(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-client', version: version_lixbox_service)
-        compile(group: 'fr.lixbox.lixbox-orm', name: 'lixbox-redis', version: version_lixbox_orm)
-        compile(group: 'fr.lixbox.lixbox-param', name: 'lixbox-param-client', version: version_lixbox_param)
+        implementation(group: 'fr.lixbox.lixbox-io', name: 'lixbox-json', version: version_lixbox_io)
+        implementation(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-client', version: version_lixbox_service)
+        implementation(group: 'fr.lixbox.lixbox-orm', name: 'lixbox-redis', version: version_lixbox_orm)
+        implementation(group: 'fr.lixbox.lixbox-param', name: 'lixbox-param-client', version: version_lixbox_param)
         
         //quarkus
-        compile group: 'io.quarkus', name: 'quarkus-resteasy', version:quarkusVersion
-        compile group: 'io.quarkus', name: 'quarkus-resteasy-jackson', version:quarkusVersion
-        compile group: 'io.quarkus', name: 'quarkus-rest-client', version:quarkusVersion
-        compile group: 'io.quarkus', name: 'quarkus-smallrye-openapi', version:quarkusVersion
-        compile group: 'io.quarkus', name: 'quarkus-logging-gelf', version:quarkusVersion
-        compile group: 'io.quarkus', name: 'quarkus-smallrye-opentracing', version: quarkusVersion
+        implementation group: 'io.quarkus', name: 'quarkus-resteasy', version:quarkusVersion
+        implementation group: 'io.quarkus', name: 'quarkus-resteasy-jackson', version:quarkusVersion
+        implementation group: 'io.quarkus', name: 'quarkus-rest-client', version:quarkusVersion
+        implementation group: 'io.quarkus', name: 'quarkus-smallrye-openapi', version:quarkusVersion
+        implementation group: 'io.quarkus', name: 'quarkus-logging-gelf', version:quarkusVersion
+        implementation group: 'io.quarkus', name: 'quarkus-smallrye-opentracing', version: quarkusVersion
 
         
         //divers
-        compile group: 'sesin.poseidon', name: 'jvulcain', version: '11.0.00.005'
-        compile group: 'redis.clients', name: 'jedis', version: '3.3.0'
-        compile group: 'org.hibernate.validator', name: 'hibernate-validator', version: version_hibernate_validator
+        implementation group: 'sesin.poseidon', name: 'jvulcain', version: '11.0.00.005'
+        implementation group: 'redis.clients', name: 'jedis', version: '3.3.0'
+        implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: version_hibernate_validator
         
         //TEST
-        testCompile group:'io.quarkus', name: 'quarkus-junit5', version: quarkusVersion
-        testCompile group:'io.rest-assured', name: 'rest-assured', version: '3.3.0'
-        testCompile group: 'io.quarkus', name: 'quarkus-rest-client', version: quarkusVersion
+        testImplementation group:'io.quarkus', name: 'quarkus-junit5', version: quarkusVersion
+        testImplementation group:'io.rest-assured', name: 'rest-assured', version: '3.3.0'
+        testImplementation group: 'io.quarkus', name: 'quarkus-rest-client', version: quarkusVersion
     }
     
     jar{
