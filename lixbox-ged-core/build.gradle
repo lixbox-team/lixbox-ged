@@ -28,7 +28,6 @@ project(":lixbox-ged-core"){
 
         
         //divers
-        implementation group: 'sesin.poseidon', name: 'jvulcain', version: '11.0.00.005'
         implementation group: 'redis.clients', name: 'jedis', version: '3.3.0'
         implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: version_hibernate_validator
         
