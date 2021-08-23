@@ -49,7 +49,6 @@ import fr.lixbox.service.ged.model.GedEntry;
 import fr.lixbox.service.ged.model.GedFileEntry;
 import fr.lixbox.service.ged.provider.GedProvider;
 import fr.lixbox.service.ged.provider.RedisProvider;
-import fr.lixbox.service.ged.provider.SesinProvider;
 import fr.lixbox.service.param.ParametreServiceClient;
 import fr.lixbox.service.param.model.Parametre;
 import fr.lixbox.service.registry.RegistryService;
@@ -73,7 +72,6 @@ public class GedServiceBean implements Serializable, GedService
     private static final Log LOG = LogFactory.getLog(GedService.class);
     private static final String SERVICE_REDIS_TEXT = "LE SERVICE REDIS ";
     
-	@Inject private SesinProvider sesinProvider;
     @Inject private RedisProvider redisProvider;
     
     @Inject @LocalRegistryConfig RegistryService registryService;
@@ -347,15 +345,6 @@ public class GedServiceBean implements Serializable, GedService
     private GedProvider getGedProvider(Map<String, String> hParams)
     {
         GedProvider provider = redisProvider;
-        if (hParams.containsKey(Constant.PROVIDER_KEY))
-        {
-            switch(hParams.get(Constant.PROVIDER_KEY))
-            {
-                case "SESIN":
-                    provider = sesinProvider;
-                    break;
-            }
-        }
         return provider;
     }
 }
