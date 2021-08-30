@@ -10,6 +10,7 @@ def onFailed(e) {
     BUILD_STATUS = 'FAILED'
     def msg = 'The '+JOB_NAME+' - Build # '+BUILD_NUMBER+' is '+BUILD_STATUS+'. \n Check console output at '+BUILD_URL+' to view the results ';   
     office365ConnectorSend message: msg, status: BUILD_STATUS, webhookUrl: teamsHook, color: "dd4040"
+    
 }
 
 withCredentials([usernamePassword(credentialsId: 'e1529c62-f3ec-4b12-bbad-2a352fda9af2', usernameVariable: 'JENKINS_LOGIN', passwordVariable: 'JENKINS_PWD')]) {
@@ -74,6 +75,22 @@ withCredentials([usernamePassword(credentialsId: 'e1529c62-f3ec-4b12-bbad-2a352f
 	        }
 	        echo 'Code review & report finished'
 	    }
+            
+        stage('Expose docker solution'){
+            echo 'Expose docker solution started'
+            retry(2){ 
+                try{
+                    withCredentials([usernamePassword(credentialsId: 'DOCKERHUB', usernameVariable: 'DOCKER_LOGIN', passwordVariable: 'DOCKER_PWD')]) {
+                        sh 'export SOURCE_BUILD_NUMBER=${BUILD_NUMBER} && ${WORKSPACE}/gradlew -Pdockerhub_username=${DOCKER_LOGIN} -Pdockerhub_password=${DOCKER_PWD} --stacktrace buildAndPushDockerImages'
+                    }
+                }
+                catch (e){
+                    onFailed(e);
+                    error e
+                }
+            }
+            echo 'Expose docker solution finished'
+        }
 	    
 	    stage('Distribution for production'){
 	        echo 'Distribution for production started'
@@ -82,6 +99,13 @@ withCredentials([usernamePassword(credentialsId: 'e1529c62-f3ec-4b12-bbad-2a352f
 	            	withCredentials([usernamePassword(credentialsId: 'f33ba02a-2b78-47ae-9577-86299b22dbde', usernameVariable: 'MVCT_LOGIN', passwordVariable: 'MVCT_PWD')]) {
 	                    sh 'export SOURCE_BUILD_NUMBER=${BUILD_NUMBER} && ${WORKSPACE}/gradlew -Djenkins.login=${JENKINS_LOGIN} -Djenkins.password=${JENKINS_PWD}  -Dmavencentral.login=${MVCT_LOGIN} -Dmavencentral.password=${MVCT_PWD} -Dgit.token=${GIT_TOKEN} -Penv=prod --stacktrace publish -Psigning.password=${KS_PWD}'
                     }
+	                if(!currentBuild.result)
+	                {
+	                   currentBuild.result = 'SUCCESS'
+	                   BUILD_STATUS = 'SUCCESS'
+	                }
+	                def msg = 'The '+JOB_NAME+' - Build # '+BUILD_NUMBER+' is '+BUILD_STATUS+'. \n Check console output at '+BUILD_URL+' to view the results.';
+    				office365ConnectorSend message: msg, status: BUILD_STATUS, webhookUrl: teamsHook, color: "rgb(184, 255, 184)"
 	            }
 	            catch (e){
 	                onFailed(e);
@@ -90,34 +114,5 @@ withCredentials([usernamePassword(credentialsId: 'e1529c62-f3ec-4b12-bbad-2a352f
 	        }
 	        echo 'Distribution for production finished'
 	    }
-    
-        stage('Expose docker solution'){
-            echo 'Expose docker solution started'
-            retry(2){ 
-                try{
-                    withCredentials([usernamePassword(credentialsId: 'DOCKERHUB', usernameVariable: 'JENKINS_USR', passwordVariable: 'JENKINS_PWD')]) {
-                        sh 'export SOURCE_BUILD_NUMBER=${BUILD_NUMBER} && ${WORKSPACE}/gradlew -Pdockerhub_username=${JENKINS_USR} -Pdockerhub_password=${JENKINS_PWD} --stacktrace buildAndPushDockerImages'
-                    }
-                    if(!currentBuild.result)
-                    {
-                       currentBuild.result = 'SUCCESS'
-                       BUILD_STATUS = 'SUCCESS'
-                    }
-                        if(!currentBuild.result)
-                        {
-                           currentBuild.result = 'SUCCESS'
-                           BUILD_STATUS = 'SUCCESS'
-                        }
-                        def msg = 'The '+JOB_NAME+' - Build # '+BUILD_NUMBER+' is '+BUILD_STATUS+'. \n Check console output at '+BUILD_URL+' to view the results.';
-                        office365ConnectorSend message: msg, status: BUILD_STATUS, webhookUrl: teamsHook, color: "rgb(184, 255, 184)"
-                }
-                catch (e){
-                    sh 'export SOURCE_BUILD_NUMBER=${BUILD_NUMBER} && ${WORKSPACE}/gradlew site uploadSite --stacktrace'
-                    onFailed(e);
-                    error e
-                }
-            }
-            echo 'Expose docker solution finished'
-        }
-    }
+	}
 }

@@ -1,13 +1,11 @@
 desc_project{
     type="app-docker"
-    projectSite=false
     withDocker=true
-    withRegistry=false
     withQuarkus=true
     version{
         majorVersion=11
         mediumVersion=1
-        minorVersion=0
+        minorVersion=2
     }
     artefact{
         group="fr.lixbox.lixbox-ged"
@@ -15,46 +13,31 @@ desc_project{
         projectKey="${group}:${project}"
         dockerImageKey="lixboxteam"
     }
-	uri{
-	   api_context="/ged/api"
-	   api="/ged/api/1.0"
-	   ui_context="/ged/ui"
-	   ui="/ged/ui" 
-	}
-
-	pic{
-	    channel="lixbox"
-		git{
-    	    uri="https://scm.service.dev.lan/${channel}/${desc_project.artefact.project}.git"
-    	}    	
-        jenkins{
-            uri="https://ci.service.dev.lan/view/${channel}/job/${desc_project.artefact.project}-pipeline"
-        }   
-        sonar{
-            uri="https://quality.service.dev.lan/dashboard?id=${desc_project.artefact.group}%3A${desc_project.artefact.project}"
-        }
-    }
 }
 
-artifactoryRepository{
-	contextUrl="https://repos.service.dev.lan/artifactory"
-    username="lixbox.jenkins.bot"
-    password=".TL1b0sc!"
-	lixboxRelease	{	
-		name="lixbox-release"
-	}
-    lixboxSnapshot {
-        name="lixbox-snapshot"
+pic{
+    channel="lixbox"
+	git{
+	    uri="https://github.com/lixbox-team/lixbox-ged.git"
+	}    	
+    jenkins{
+        uri="https://ci.service.lixtec.fr/view/${channel}"
+    }  
+    sonar{
+        uri="https://quality.service.lixtec.fr"
     }
-    libsRelease{
-		name="libs-release"
+    artifactory{
+		uri="https://repos.service.lixtec.fr/artifactory"
+    }
+	mavencentral{
+		uri="https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
 	}
 }
 
-sonarRepository{
-	host{
-		url="https://quality.service.dev.lan"
-        username="lixbox.sonar.bot"
-        password="@L1xb0x!"
+repository{
+	artifactory{
+	    release	="lixbox-release"
+	    snapshot ="lixbox-snapshot"
+	    libsRelease="libs-release"
 	}
 }

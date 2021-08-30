@@ -1,7 +1,6 @@
-# lixbox-param
+# lixbox-ged
 
 Ce dépôt contient le µservice de ged
-Le site du service est [ici](https://project-site.service.dev.lan/lixbox-ged)
 
 
 ## Dépendances
@@ -16,7 +15,7 @@ Le site du service est [ici](https://project-site.service.dev.lan/lixbox-ged)
 ### API
 Les variables d'environnement suivantes servent à configurer le service:
 * **registry.uri**: URI du service d'annauire -> **http://main.host:18100/registry/api/1.0**
-* **redis.uri**: URI du service Redis -> **tcp://localhost:6382**
+* **redis.uri**: URI du service Redis -> **tcp://localhost:6383**
 * **quarkus.http.port**: Port exposée par le service -> **18104**
 * **storage.path**: Définitition du chemin de stockage des fichiers -> **user_home**
 * **quarkus.log.handler.gelf.enabled**: Activation du logging GRAYLOG -> **false**

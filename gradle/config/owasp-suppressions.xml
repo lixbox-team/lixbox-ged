@@ -1,86 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
-<!-- java -->
-<suppress>
+<!-- java --><suppress>
    <notes><![CDATA[
-   file name: dom4j-2.1.1.jar
-   ]]></notes>
-   <packageUrl regex="true">^pkg:maven/org\.dom4j/dom4j@.*$</packageUrl>
-   <cve>CVE-2020-10683</cve>
-</suppress><suppress>
-   <notes><![CDATA[
-   file name: mutiny-0.5.0.jar
-   ]]></notes>
-   <packageUrl regex="true">^pkg:maven/io\.smallrye\.reactive/mutiny@.*$</packageUrl>
-   <cve>CVE-2013-0136</cve>
-</suppress><suppress>
-   <notes><![CDATA[
-   file name: mutiny-0.5.0.jar
-   ]]></notes>
-   <packageUrl regex="true">^pkg:maven/io\.smallrye\.reactive/mutiny@.*$</packageUrl>
-   <cve>CVE-2018-15529</cve>
-</suppress><suppress>
-   <notes><![CDATA[
-   file name: quarkus-resteasy-1.3.1.Final.jar
+   file name: quarkus-resteasy-2.2.0.Final.jar
    ]]></notes>
    <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy@.*$</packageUrl>
    <cpe>cpe:/a:redhat:resteasy</cpe>
-</suppress>  
-<suppress>
+</suppress><suppress>
    <notes><![CDATA[
-   file name: quarkus-resteasy-common-1.3.1.Final.jar
+   file name: quarkus-resteasy-common-2.2.0.Final.jar
    ]]></notes>
    <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-common@.*$</packageUrl>
    <cpe>cpe:/a:redhat:resteasy</cpe>
-</suppress>
-<suppress>
+</suppress><suppress>
    <notes><![CDATA[
-   file name: quarkus-resteasy-jackson-1.3.1.Final.jar
+   file name: quarkus-resteasy-jackson-2.2.0.Final.jar
    ]]></notes>
    <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-jackson@.*$</packageUrl>
    <cpe>cpe:/a:redhat:resteasy</cpe>
-</suppress>
-<suppress>
+</suppress><suppress>
    <notes><![CDATA[
-   file name: quarkus-resteasy-server-common-1.3.1.Final.jar
+   file name: quarkus-resteasy-server-common-2.2.0.Final.jar
    ]]></notes>
    <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-server\-common@.*$</packageUrl>
    <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: undertow-servlet-2.1.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-servlet@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-10687</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: undertow-core-2.1.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-10687</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: undertow-core-2.1.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-10705</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: undertow-core-2.1.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-10719</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: undertow-servlet-2.1.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-servlet@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-10705</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: undertow-servlet-2.1.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-servlet@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-10719</vulnerabilityName>
 </suppress>
+   <suppress>
+      <notes><![CDATA[
+      file name: dom4j-2.1.1.jar
+      ]]></notes>
+      <packageUrl regex="true">^pkg:maven/org\.dom4j/dom4j@.*$</packageUrl>
+      <cve>CVE-2020-10683</cve>
+   </suppress>
 <suppress>
    <notes><![CDATA[
-   file name: quarkus-http-core-3.0.4.Final.jar
+   file name: mutiny-0.4.3.jar
    ]]></notes>
-   <packageUrl regex="true">^pkg:maven/io\.quarkus\.http/quarkus\-http\-core@.*$</packageUrl>
-   <cpe>cpe:/a:redhat:undertow</cpe>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: quarkus-http-http-core-3.0.4.Final.jar
-   ]]></notes>
-   <packageUrl regex="true">^pkg:maven/io\.quarkus\.http/quarkus\-http\-http\-core@.*$</packageUrl>
-   <cpe>cpe:/a:redhat:undertow</cpe>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: quarkus-http-servlet-3.0.4.Final.jar
-   ]]></notes>
-   <packageUrl regex="true">^pkg:maven/io\.quarkus\.http/quarkus\-http\-servlet@.*$</packageUrl>
-   <cpe>cpe:/a:redhat:undertow</cpe>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: quarkus-http-vertx-backend-3.0.4.Final.jar
-   ]]></notes>
-   <packageUrl regex="true">^pkg:maven/io\.quarkus\.http/quarkus\-http\-vertx\-backend@.*$</packageUrl>
-   <cpe>cpe:/a:redhat:undertow</cpe>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: quarkus-undertow-1.3.1.Final.jar
-   ]]></notes>
-   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-undertow@.*$</packageUrl>
-   <cpe>cpe:/a:redhat:undertow</cpe>
+   <packageUrl regex="true">^pkg:maven/io\.smallrye\.reactive/mutiny@.*$</packageUrl>
+   <cpe>cpe:/a:mutiny:mutiny</cpe>
 </suppress>
 <suppress>
    <notes><![CDATA[
@@ -172,210 +165,639 @@
    ]]></notes>
    <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-swagger\-ui@.*$</packageUrl>
    <cpe>cpe:/a:swagger_project:swagger-ui</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-logging-gelf-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-logging\-gelf@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-smallrye-openapi-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-smallrye\-openapi@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-swagger-ui-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-swagger\-ui@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
 </suppress>
 
 
-<!-- nodejs -->
-<suppress>
+   <suppress>
+      <notes><![CDATA[
+      file name: bootstrap-2.6.0.Final.jar (shaded: org.yaml:snakeyaml:1.18)
+      ]]></notes>
+      <packageUrl regex="true">^pkg:maven/org\.yaml/snakeyaml@.*$</packageUrl>
+      <cve>CVE-2017-18640</cve>
+   </suppress><suppress>
    <notes><![CDATA[
-   file name: @hapi/hoek:8.5.0
+   file name: logging-2.6.0.Final.jar
    ]]></notes>
-   <packageUrl regex="true">^pkg:npm/%40hapi%2Fhoek@.*$</packageUrl>
-   <vulnerabilityName>1468</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: acorn:6.4.1
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/acorn@.*$</packageUrl>
-   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: minimist:0.0.8
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/minimist@.*$</packageUrl>
-   <vulnerabilityName>1179</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: yargs-parser:11.1.1
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/yargs\-parser@.*$</packageUrl>
-   <vulnerabilityName>CVE-2020-7608</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: yargs-parser:13.1.1
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/yargs\-parser@.*$</packageUrl>
-   <vulnerabilityName>CVE-2020-7608</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: yargs-parser:16.1.0
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/yargs\-parser@.*$</packageUrl>
-   <vulnerabilityName>CVE-2020-7608</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: yargs:12.0.5
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/yargs@.*$</packageUrl>
-   <vulnerabilityName>CVE-2020-7608</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: braces:"3.0.2"
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/braces@.*$</packageUrl>
-   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: debug:"2.6.9"
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/debug@.*$</packageUrl>
-   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: kind-of:"5.1.0"
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/kind\-of@.*$</packageUrl>
-   <vulnerabilityName>CWE-74: Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: kind-of:3.2.2
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/kind\-of@.*$</packageUrl>
-   <vulnerabilityName>CWE-74: Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: kind-of:4.0.0
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/kind\-of@.*$</packageUrl>
-   <vulnerabilityName>CWE-74: Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: ms:"2.0.0"
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/ms@.*$</packageUrl>
-   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: qs:"6.7.0"
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/qs@.*$</packageUrl>
-   <vulnerabilityName>CVE-2014-7191</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: qs:"6.7.0"
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/qs@.*$</packageUrl>
-   <vulnerabilityName>CWE-20: Improper Input Validation</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: qs:"6.7.0"
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/qs@.*$</packageUrl>
-   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: qs:"6.7.0"
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/qs@.*$</packageUrl>
-   <vulnerabilityName>Prototype override protection bypass</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: ssri:"7.1.0"
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/ssri@.*$</packageUrl>
-   <vulnerabilityName>CVE-2018-7651</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: ssri:"7.1.0"
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/ssri@.*$</packageUrl>
-   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: tough-cookie:"2.5.0"
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/tough\-cookie@.*$</packageUrl>
-   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: ms:"2.0.0"
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/ms@.*$</packageUrl>
-   <vulnerabilityName>CVE-2015-8315</vulnerabilityName>
-</suppress>
-<suppress>
-   <notes><![CDATA[
-   file name: http-proxy:1.18.0
-   ]]></notes>
-   <packageUrl regex="true">^pkg:npm/http\-proxy@.*$</packageUrl>
-   <vulnerabilityName>1486</vulnerabilityName>
+   <packageUrl regex="true">^pkg:maven/io\.thorntail/logging@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:wildfly</cpe>
 </suppress><suppress>
    <notes><![CDATA[
-   file name: lodash:4.17.15
+   file name: logging-2.6.0.Final.jar
    ]]></notes>
-   <packageUrl regex="true">^pkg:npm/lodash@.*$</packageUrl>
-   <vulnerabilityName>1523</vulnerabilityName>
+   <packageUrl regex="true">^pkg:maven/io\.thorntail/logging@.*$</packageUrl>
+   <cpe>cpe:/a:wildfly:wildfly</cpe>
 </suppress><suppress>
    <notes><![CDATA[
-   file name: yargs-parser:16.1.0
+   file name: logging-2.6.0.Final.jar
    ]]></notes>
-   <packageUrl regex="true">^pkg:npm/yargs\-parser@.*$</packageUrl>
-   <vulnerabilityName>1500</vulnerabilityName>
+   <packageUrl regex="true">^pkg:maven/io\.thorntail/logging@.*$</packageUrl>
+   <cve>CVE-2018-14627</cve>
 </suppress><suppress>
    <notes><![CDATA[
-   file name: yargs-parser:11.1.1
+   file name: logging-2.6.0.Final.jar
    ]]></notes>
-   <packageUrl regex="true">^pkg:npm/yargs\-parser@.*$</packageUrl>
-   <vulnerabilityName>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</vulnerabilityName>
+   <packageUrl regex="true">^pkg:maven/io\.thorntail/logging@.*$</packageUrl>
+   <cve>CVE-2019-3805</cve>
 </suppress><suppress>
    <notes><![CDATA[
-   file name: dot-prop:4.2.0
+   file name: undertow-2.6.0.Final.jar
    ]]></notes>
-   <packageUrl regex="true">^pkg:npm/dot\-prop@.*$</packageUrl>
-   <vulnerabilityName>1213</vulnerabilityName>
+   <packageUrl regex="true">^pkg:maven/io\.thorntail/undertow@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:undertow</cpe>
 </suppress><suppress>
    <notes><![CDATA[
-   file name: lodash:4.17.15
+   file name: undertow-2.6.0.Final.jar
    ]]></notes>
-   <packageUrl regex="true">^pkg:npm/lodash@.*$</packageUrl>
-   <vulnerabilityName>CVE-2020-8203</vulnerabilityName>
+   <packageUrl regex="true">^pkg:maven/io\.thorntail/undertow@.*$</packageUrl>
+   <cve>CVE-2018-1067</cve>
 </suppress><suppress>
    <notes><![CDATA[
-   file name: serialize-javascript:3.1.0
+   file name: undertow-core-2.0.27.Final.jar
    ]]></notes>
-   <packageUrl regex="true">^pkg:npm/serialize\-javascript@.*$</packageUrl>
-   <vulnerabilityName>1548</vulnerabilityName>
+   <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-core@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:undertow</cpe>
 </suppress><suppress>
    <notes><![CDATA[
-   file name: semver:"7.3.2"
+   file name: undertow-core-2.0.27.Final.jar
    ]]></notes>
-   <packageUrl regex="true">^pkg:npm/semver@.*$</packageUrl>
-   <vulnerabilityName>CVE-2015-8855</vulnerabilityName>
+   <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-core@.*$</packageUrl>
+   <cve>CVE-2019-14888</cve>
 </suppress><suppress>
    <notes><![CDATA[
-   file name: serialize-javascript:"2.1.2"
+   file name: undertow-servlet-2.0.27.Final.jar
    ]]></notes>
-   <packageUrl regex="true">^pkg:npm/serialize\-javascript@.*$</packageUrl>
-   <vulnerabilityName>CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</vulnerabilityName>
+   <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-servlet@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:undertow</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: undertow-servlet-2.0.27.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.undertow/undertow\-servlet@.*$</packageUrl>
+   <vulnerabilityName>CVE-2019-14888</vulnerabilityName>
+</suppress>
+<suppress>
+   <notes><![CDATA[
+   file name: dom4j-2.1.1.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.dom4j/dom4j@.*$</packageUrl>
+   <cpe>cpe:/a:dom4j_project:dom4j</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: resteasy-client-3.6.3.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.jboss\.resteasy/resteasy\-client@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: resteasy-jaxrs-3.6.3.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.jboss\.resteasy/resteasy\-jaxrs@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: arc-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus\.arc/arc@.*$</packageUrl>
+   <cpe>cpe:/a:arc_project:arc</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: arc-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus\.arc/arc@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-arc-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-arc@.*$</packageUrl>
+   <cpe>cpe:/a:arc_project:arc</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-arc-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-arc@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-bootstrap-runner-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-bootstrap\-runner@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-core-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-core@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-development-mode-spi-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-development\-mode\-spi@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-ide-launcher-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-ide\-launcher@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-jackson-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-jackson@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-netty-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-netty@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-rest-client-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-rest\-client@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-common-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-common@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-jackson-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-jackson@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: vertx-core-3.9.4.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.vertx/vertx\-core@.*$</packageUrl>
+   <cpe>cpe:/a:eclipse:vert.x</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-server-common-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-server\-common@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-security-runtime-spi-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-security\-runtime\-spi@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-vertx-core-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-vertx\-core@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-vertx-http-1.9.2.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-vertx\-http@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: resteasy-client-api-4.5.8.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.jboss\.resteasy/resteasy\-client\-api@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: resteasy-client-microprofile-4.5.8.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.jboss\.resteasy/resteasy\-client\-microprofile@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: resteasy-core-spi-4.5.8.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.jboss\.resteasy/resteasy\-core\-spi@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: resteasy-jackson2-provider-4.5.8.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.jboss\.resteasy/resteasy\-jackson2\-provider@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: resteasy-jaxb-provider-4.5.8.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.jboss\.resteasy/resteasy\-jaxb\-provider@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: vertx-bridge-common-3.9.4.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.vertx/vertx\-bridge\-common@.*$</packageUrl>
+   <cpe>cpe:/a:eclipse:vert.x</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: resteasy-core-4.5.8.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.jboss\.resteasy/resteasy\-core@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: groovy-2.4.15.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.codehaus\.groovy/groovy@.*$</packageUrl>
+   <cpe>cpe:/a:apache:groovy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: groovy-xml-2.4.15.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.codehaus\.groovy/groovy\-xml@.*$</packageUrl>
+   <cpe>cpe:/a:apache:groovy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: org.apache.sling.javax.activation-0.1.0.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.sling/org\.apache\.sling\.javax\.activation@.*$</packageUrl>
+   <cpe>cpe:/a:apache:sling</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: groovy-json-2.4.15.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.codehaus\.groovy/groovy\-json@.*$</packageUrl>
+   <cpe>cpe:/a:apache:groovy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: groovy-2.4.15.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.codehaus\.groovy/groovy@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-17521</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: guava-25.1-android.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/com\.google\.guava/guava@.*$</packageUrl>
+   <cpe>cpe:/a:google:guava</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: jakarta.el-api-3.0.3.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/jakarta\.el/jakarta\.el\-api@.*$</packageUrl>
+   <cpe>cpe:/a:eclipse:jakarta_expression_language</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: jsoup-1.12.1.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.jsoup/jsoup@.*$</packageUrl>
+   <cpe>cpe:/a:jsoup:jsoup</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: microprofile-config-api-2.0.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.eclipse\.microprofile\.config/microprofile\-config\-api@.*$</packageUrl>
+   <cpe>cpe:/a:config_file_provider_project:config_file_provider</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: microprofile-config-api-2.0.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.eclipse\.microprofile\.config/microprofile\-config\-api@.*$</packageUrl>
+   <cpe>cpe:/a:eclipse:eclipse_ide</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: mutiny-smallrye-context-propagation-1.0.0.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.smallrye\.reactive/mutiny\-smallrye\-context\-propagation@.*$</packageUrl>
+   <cpe>cpe:/a:mutiny:mutiny</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-apache-httpclient-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-apache\-httpclient\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:apache:httpclient</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-apache-httpclient-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-apache\-httpclient\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-kubernetes-spi-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-kubernetes\-spi@.*$</packageUrl>
+   <cpe>cpe:/a:kubernetes:kubernetes</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-kubernetes-spi-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-kubernetes\-spi@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-mutiny-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-mutiny\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:mutiny:mutiny</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-mutiny-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-mutiny\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-rest-client-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-rest\-client@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-common-spi-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-common\-spi@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-common-spi-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-common\-spi@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: xstream-1.4.17.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/com\.thoughtworks\.xstream/xstream@.*$</packageUrl>
+   <cpe>cpe:/a:xstream_project:xstream</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: smallrye-context-propagation-storage-1.2.1.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.smallrye/smallrye\-context\-propagation\-storage@.*$</packageUrl>
+   <cpe>cpe:/a:storage_project:storage</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-server-common-spi-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-server\-common\-spi@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-server-common-spi-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-server\-common\-spi@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-server-common-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-server\-common\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-server-common-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-server\-common\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: jsoup-1.12.1.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.jsoup/jsoup@.*$</packageUrl>
+   <vulnerabilityName>CVE-2021-37714</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: guava-25.1-android.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/com\.google\.guava/guava@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-8908</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: xstream-1.4.17.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/com\.thoughtworks\.xstream/xstream@.*$</packageUrl>
+   <vulnerabilityName>CVE-2021-39139</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: xstream-1.4.17.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/com\.thoughtworks\.xstream/xstream@.*$</packageUrl>
+   <vulnerabilityName>CVE-2021-39141</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: xstream-1.4.17.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/com\.thoughtworks\.xstream/xstream@.*$</packageUrl>
+   <vulnerabilityName>CVE-2021-39144</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: xstream-1.4.17.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/com\.thoughtworks\.xstream/xstream@.*$</packageUrl>
+   <vulnerabilityName>CVE-2021-39145</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: xstream-1.4.17.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/com\.thoughtworks\.xstream/xstream@.*$</packageUrl>
+   <vulnerabilityName>CVE-2021-39146</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-common-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-common\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-common-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-common\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-jackson-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-jackson\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-jackson-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-jackson\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: hibernate-validator-6.1.4.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.hibernate\.validator/hibernate\-validator@.*$</packageUrl>
+   <cpe>cpe:/a:hibernate:hibernate-validator</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: hibernate-validator-6.1.4.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.hibernate\.validator/hibernate\-validator@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-10693</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: kotlin-stdlib-1.4.10.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.jetbrains\.kotlin/kotlin\-stdlib@.*$</packageUrl>
+   <cpe>cpe:/a:jetbrains:kotlin</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: kotlin-stdlib-common-1.4.10.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.jetbrains\.kotlin/kotlin\-stdlib\-common@.*$</packageUrl>
+   <cpe>cpe:/a:jetbrains:kotlin</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-reactive-spi-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-reactive\-spi\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:quarkus:quarkus</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: quarkus-resteasy-reactive-spi-deployment-2.2.0.Final.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/io\.quarkus/quarkus\-resteasy\-reactive\-spi\-deployment@.*$</packageUrl>
+   <cpe>cpe:/a:redhat:resteasy</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <cpe>cpe:/a:apache:tomcat</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <cpe>cpe:/a:apache_software_foundation:tomcat</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <cpe>cpe:/a:apache_tomcat:apache_tomcat</cpe>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2019-12418</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2019-17563</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-11996</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-13935</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-17527</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-1938</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-9484</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2021-24122</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2021-25329</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2021-30640</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2021-33037</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-13934</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2020-13943</vulnerabilityName>
+</suppress><suppress>
+   <notes><![CDATA[
+   file name: tomcat-embed-core-8.5.46.jar
+   ]]></notes>
+   <packageUrl regex="true">^pkg:maven/org\.apache\.tomcat\.embed/tomcat\-embed\-core@.*$</packageUrl>
+   <vulnerabilityName>CVE-2021-25122</vulnerabilityName>
 </suppress>
 </suppressions>

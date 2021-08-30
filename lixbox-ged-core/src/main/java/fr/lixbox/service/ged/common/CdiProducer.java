@@ -92,7 +92,6 @@ public class CdiProducer
                 String hostName = redisUri.substring(6,redisUri.lastIndexOf(':'));
                 String port = redisUri.substring(redisUri.lastIndexOf(':')+1);
                 result = new ExtendRedisClient(hostName, Integer.parseInt(port));
-                result.open();
             }
         }
         catch (Exception e)

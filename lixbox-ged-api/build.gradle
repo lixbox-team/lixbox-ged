@@ -7,10 +7,9 @@ project(":lixbox-ged-api"){
 //        sans objet
         
         //lixbox
-        implementation(group: 'fr.lixbox.lixbox-common', name: 'lixbox-stream', version: version_lixbox_common)
-        implementation(group: 'fr.lixbox.lixbox-orm', name: 'lixbox-entity', version: version_lixbox_orm)
-        implementation(group: 'fr.lixbox.lixbox-orm', name: 'lixbox-redis', version: version_lixbox_orm)
-        implementation(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-common', version: version_lixbox_service) 
+        api(group: 'fr.lixbox.lixbox-common', name: 'lixbox-stream', version: version_lixbox_common)
+        api(group: 'fr.lixbox.lixbox-orm', name: 'lixbox-redis', version: version_lixbox_orm)
+        api(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-common', version: version_lixbox_service) 
         
         //quarkus
         compileClasspath group: 'io.quarkus', name: 'quarkus-resteasy', version:quarkusVersion

@@ -1,11 +1,11 @@
 project(":lixbox-ged-client"){
     dependencies {
         //Projects
-        implementation project(":lixbox-ged-api")
+        api project(":lixbox-ged-api")
         
        
         //lixbox
-        implementation(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-client', version: version_lixbox_service){ 
+        api(group: 'fr.lixbox.lixbox-service', name: 'lixbox-microservice-client', version: version_lixbox_service){ 
             exclude(group:'fr.lixbox')
         }        
         

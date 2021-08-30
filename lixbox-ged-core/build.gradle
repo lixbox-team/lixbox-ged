@@ -1,7 +1,7 @@
 import com.bmuschko.gradle.docker.tasks.container.*
 import com.bmuschko.gradle.docker.tasks.image.*
 plugins {
-    id 'com.bmuschko.docker-remote-api' version '6.1.3'
+    id 'com.bmuschko.docker-remote-api' version "${docker_remote_plugins}"
     id 'io.quarkus' version "${quarkus_gradle_plugins}"
 }
 project(":lixbox-ged-core"){
@@ -71,14 +71,12 @@ project(":lixbox-ged-core"){
            property "sonar.projectKey", "${config.desc_project.artefact.group}.${rootProject.name}:${project.name}"
            property "sonar.projectName", "${project.name}"
            property "sonar.sources","src/main"
-           property "sonar.tests","src/test, src/integTest"
+           property "sonar.tests","src/test"
         }
     }
 
     test {
-      useJUnitPlatform()      
-      environment "REGISTRY_REDIS_URI", "tcp://main.host:6380"
-      environment "PARAM_REDIS_URI", "tcp://main.host:6380"
+      useJUnitPlatform()
     }
 
     
@@ -102,7 +100,7 @@ project(":lixbox-ged-core"){
     }
     tasks.quarkusBuild.finalizedBy(copyArtefact);
     tasks.jar.finalizedBy(quarkusBuild);
-    
+
     
     //creation de l'image docker
     task pullOpenjdk11Image(type: DockerPullImage, description: "Pull openjdk11 image"){
@@ -124,7 +122,7 @@ project(":lixbox-ged-core"){
         entryPoint('java')
         workingDir('/app')
         defaultCommand('-jar', "${project.name}-${project.version}-runner.jar")
-        exposePort(18100)
+        exposePort(18104)
     }
     task buildProjectImages(type: DockerBuildImage, group: "docker", description: "build project images") {
         dependsOn createDockerfile
@@ -148,7 +146,7 @@ project(":lixbox-ged-core"){
        image='redis:latest'
     }
     task removeRedisContainer(type: DockerRemoveContainer, description: "Remove redis container"){
-        targetContainerId 'param_serv_redis_test'
+        targetContainerId 'ged_serv_redis_test'
         onError { exception ->
             if (!(exception.message.contains('No such container')||exception.message.contains('is already in progress')))
                 throw exception
@@ -156,12 +154,12 @@ project(":lixbox-ged-core"){
     }
     task createRedisContainer(type: DockerCreateContainer, description: "Create a redis container for test") {
         targetImageId 'redis:latest'
-        containerName = 'param_serv_redis_test'
+        containerName = 'ged_serv_redis_test'
         hostConfig.autoRemove = true
-        hostConfig.portBindings = ['6381:6379']
+        hostConfig.portBindings = ['6382:6379']
     }
     task startRedisContainer(type: DockerStartContainer, group: "docker", description: "start redis container") {
-        targetContainerId "param_serv_redis_test"
+        targetContainerId "ged_serv_redis_test"
     }   
     task stopRedisContainer(type: DockerStopContainer, group: "docker", description: "stop redis container") {
         targetContainerId "param_serv_redis_test"        
